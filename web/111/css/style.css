@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; font-size: 14px;}
+.clearfix::after {
+    content: '';
+    display: block; /* after 인라인요소이므로 블럭요소로 변경 */
+    clear: both;
+}
+
+/* reset */
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+body {color: #333;}
+
+
+/* 💛wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 💛header */
+#header {}
+#header h1 { 
+    float: left;
+}
+#header .nav { 
+    float: right;
+    margin-top: 20px;
+}
+#header .nav ul { }
+#header .nav ul li { 
+    float: left;
+    width: 120px;
+    text-align: center;
+ /* (✖) padding: 20px 15px; ➰ 자식은 부모의 패딩에 침범 못함
+                         🔹여기(a의 부모)에 넣으면 자식인 a태그에 넓어진 p에 마우스 
+                           손가락영역 안잡힘-> */
+    position: relative;
+}
+#header .nav ul li a {
+    /* a 인라인요소로 자기만 영역잡음 */
+    display: block;
+    background-color: #ccc;
+    padding: 20px 15px; /* 🔹❗ 그래서 a태그에 패딩값 줘야 a옆으로 넓어진 패딩값에 손가락영역 잡힘 */
+    transition: 0.3s; 
+    /* hover시 부드럽게 시간주기 (여기에 작성해야 올리고 떼었을 때 모두 적용됨) */
+}
+#header .nav ul li a:hover {
+    background-color: #ddd;
+}
+/* 2차메뉴 */
+#header .nav ul li .submenu {
+    position: absolute;
+    top: 59px; left: 0;
+    display: none;
+    z-index: 1; /* 제이쿼리로 넘어간 서브메뉴 앞으로 올리기 */
+}
+
+/* 💛banner */
+#banner{
+    height: 378px;
+    /* ➰높이는 자식값을 따라가기 때문에 모든 이미지가 보이게 될 것, 그래서 강제로 높이값 설정함 */
+    overflow: hidden;
+}
+#banner .slideList{ position: relative;}
+#banner .slideList .slideImg{
+    position: relative;
+}
+#banner .slideList .slideImg h2{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+#banner .slideList .slideImg img{
+    width: 100%;
+    /* img태그는 인라인요소(글자취급) ---> 예측하지 못하는 공간(line-height)을 가지고 있음!
+       ❗ 공간없애는 해결방법 -> 1. display:block;  / 2. vertocal-align:top; */
+    display: block;
+    /* vertical-align: top; */
+}
+
+/* 💛content1 */
+#content1 {
+    margin-top: 15px;
+}
+#content1 .notice {
+    float: left;
+    width: 49%; height: 218px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 30px;
+    position: relative;
+}
+#content1 .notice ul{}
+#content1 .notice ul li{
+    float: left; /* clear 안하면 부모인 ul이 깨짐 -> 부모(ul)한테 clear처리하기 */
+    margin-right: 10px;
+}
+#content1 .notice ul li a{
+    font-size: 24px;
+    color: #999;
+    font-weight: bold;
+}
+#content1 .notice ul li.active a {color: #000;} /* ❗ 제이쿼리에 쓰기위해 작성해둠 */
+#content1 .notice ul li ul {
+    position: absolute;
+    top: 70px; left: 30px;
+}
+#content1 .notice ul li ul li {
+    width: 95%;
+}
+#content1 .notice ul li ul li a {
+    font-size: 16px;
+    float: left; 
+    /* float -> 공간을 인식하여 블럭요소처럼 됨(원래 자기 속성을 잃어버림) + w값 같이쓰기 */
+    width: 68%;
+    /* ✔ 말줄임말 세트(...) */
+    white-space: nowrap; /*속성값-nowrap(글자 안떨어지기),normal,pre(작성한 그대로 보이기)*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* .말줄임말 end */
+    font-weight: normal;
+}
+#content1 .notice ul li ul li span {
+    float: right;
+}
+
+#content1 .ad {
+    background-color: #ccc;
+    float: right;
+    width: 49%; height: 218px;
+}
+#content1 .ad a {}
+#content1 .ad a img {
+    width: 100%;
+    /* ❗ 부모인 a태그(인라인-자식넓이 따라감)는 넓이 인식못해서
+         할아버지(블럭)인 ad 넓이로 인식함 */
+}
+
+
+/* 💛content2 */
+#content2 {
+    margin-top: 15px;
+}
+#content2 h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#content2 ul {}
+#content2 ul li {
+    float: left;
+    width: 24.25%;
+    margin-right: 1%;
+}
+#content2 ul li:last-child {
+    margin-right: 0;
+}
+#content2 ul li div {
+    overflow: hidden; /* 부모공간보다 넘치는 자식감출 때 overflow:hidden; -> 부모에 작성 */
+}
+#content2 ul li div img {
+    width: 100%; /* 어디기준??? */
+    transition: 0.3s;
+}
+#content2 ul li div:hover img {
+    transform: scale(1.2); /*scald(1)은 w값 100%, (1.2)는 120% */
+}
+#content2 ul li span {}
+
+
+/* 💛footer */
+#footer {
+    border-top: 1px solid #ccc;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+#footer address {
+/* <!-- ✔ address : 주소를 나타내는 태그 (기울림체 기본)으로 normal로 일반체로 변경--> */
+    font-style: normal;
+}
+#footer address ul {
+    width: 647px;
+}
+#footer address ul li {
+    /* ✔ display: inline-block; 인라인요소이나, 블럭요소처럼 공간을 인식
+       ✔ display: inline; 공간을 인식못함, padding, margin의 상하 적용안됨 
+                        inline는 글자와 같은 성질 틈이 생김*/
+    display: inline;
+    padding: 0 15px 0 10px;
+    position: relative;
+}
+#footer address ul li::after {
+    content: '';
+    position: absolute;
+    top: 3px; right: 0;
+    width: 1px; height: 13px;
+    background-color: #666;
+}
+#footer address ul li.left {
+    padding-left: 0;
+    /* li 좌측 패딩값은 필요없는 선택자들 class명 .left주고 패딩값 0처리 */
+}
+#footer address p {
+    padding: 30px;
+    text-transform: uppercase; /* ✔ 영문 모두 대문자로 변경 */
+}
+
+
+
+
+/* 💛팝업 */
+.layer-bg {
+    position: fixed; /* fixed 하면 div 자기공간 잃어버림 */
+    top: 0; left: 0;
+    width: 100%; height: 100%; /* = right:0; bottom:0; 과 같은말 */
+    background-color: rgba(0,0,0,0.8);
+    display: none; /* 닫고 ❗제이쿼리 연결하기 */
+}
+.layer-bg .layer {
+    position: absolute; /* 부모 layer-bg의 position:fixed에 갇힘 */
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px; height: 500px;
+    background-color: #fff;
+    padding: 30px;
+}
+.layer-bg .layer h2 {
+    font-size: 50px;
+    text-align: center;
+}
+.layer-bg .layer .close {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 30px; right: 30px;
+}

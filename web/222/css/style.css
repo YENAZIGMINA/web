@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+body {color: #333;}
+
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+/* 💛#wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto; /* 블럭요소 중앙정렬 */
+}
+
+#header {}
+#header h1 {
+    float: left; /* 부모인 header의 왼쪽에 붙겠다 */
+    width: 110px;
+    padding: 15px 0 0;
+} 
+#header h1 a {}
+#header h1 a img {
+ /* 인라인요소는 공간을 인식하지 못함
+    But, ✔ 인라인요소이면서 공간을 인식하는 요소가 있음 -> "img, button" */
+
+    width: 100%; /* 할아버지인 h1의 공간기준 (부모인 a태그도 인라인 요소이므로) */
+
+}
+
+#header .nav {
+    float: right; /* 부모인 header의 오른쪽에 붙겠다 */
+    background-color: #89c459;
+} 
+#header .nav ul {}
+#header .nav ul li {
+    float: left; /* 부모인 ul의 왼쪽에 붙겠다 */
+    width: 140px;
+    text-align: center; /* ✔자식중 인라인요소가 있으면 가운데정렬하라 */
+    position: relative;
+} 
+#header .nav ul li a {
+    display: block; 
+    /* ✔ 1. a태그를 블럭요소로 변경해야 a영역 벗어나도 (같은줄 한정) 손가락마우스 잡힘 */
+    padding: 24px 20px 20px; /* 2. 패딩값을 줘야 (높이)에도 모두 손가락 잡힘*/
+    transition: 0.3s;
+}
+#header .nav ul li a:hover {
+    background-color: #95c271;
+}
+#header .nav ul li .submenu {
+    display: none;
+    position: absolute; /* 부모 li에 relative 고정 */
+    top: 65px; left: 0;
+}
+#header .nav ul li .submenu li {}
+#header .nav ul li .submenu li a {
+    background-color: #a2d17b;
+    padding: 10px;
+    color: #fff;
+}
+#header .nav ul li .submenu li a:hover {
+    background-color: #95c271;
+}

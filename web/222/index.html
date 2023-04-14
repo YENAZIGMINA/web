@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kookit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1>
+                <a href="#">
+                    <img src="img/logo.jpg" alt="cookit">
+                </a>
+            </h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">Cookit소개</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul> <!-- .submenu end -->
+                    </li>
+                    <li>
+                        <a href="#">Cookit메뉴</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul> <!-- .submenu end -->
+                    </li>
+                    <li>
+                        <a href="#">리뷰</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul> <!-- .submenu end -->
+                    </li>
+                    <li>
+                        <a href="#">이벤트</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul> <!-- .submenu end -->
+                    </li>
+                    <li>
+                        <a href="#">My쿡킷</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul> <!-- .submenu end -->
+                    </li>
+                </ul>
+            </nav> <!-- .nav end -->
+        </header> <!-- #header end -->
+
+        <section id="banner">
+            <div class="slidelist">
+                <div class="slideImg">
+                    <h2>이미지1</h2>
+                    <img src="img/main1.jpg" alt="cookit앱 런칭이벤트">
+                </div> <!-- .slideImg end -->
+                <div class="slideImg">
+                    <h2>이미지2</h2>
+                    <img src="img/main2.jpg" alt="cookit앱 런칭이벤트">
+                </div> <!-- .slideImg end -->
+                <div class="slideImg">
+                    <h2>이미지3</h2>
+                    <img src="img/main3.jpg" alt="cookit앱 런칭이벤트">
+                </div> <!-- .slideImg end -->
+            </div> <!-- .slidelist end -->
+        </section> <!-- #banner end -->
+
+
+    </div> <!-- #wrap end -->
+
+
+
+
+    <!-- 💛제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+    <script>
+        $('.nav ul li').mouseover(function(){
+            $(this).find('.submenu').stop().slideDown()
+        })
+        $('.nav ul li').mouseout(function(){
+            $(this).find('.submenu').stop().slideUp()
+        })
+
+    </script>
+
+</body>
+</html>
