@@ -19,26 +19,22 @@ body {color: #333;}
     margin: 0 auto; /* 블럭요소 중앙정렬 */
 }
 
-#header {}
 #header h1 {
     float: left; /* 부모인 header의 왼쪽에 붙겠다 */
     width: 110px;
     padding: 15px 0 0;
 } 
-#header h1 a {}
 #header h1 a img {
  /* 인라인요소는 공간을 인식하지 못함
     But, ✔ 인라인요소이면서 공간을 인식하는 요소가 있음 -> "img, button" */
 
     width: 100%; /* 할아버지인 h1의 공간기준 (부모인 a태그도 인라인 요소이므로) */
-
 }
 
 #header .nav {
     float: right; /* 부모인 header의 오른쪽에 붙겠다 */
     background-color: #89c459;
 } 
-#header .nav ul {}
 #header .nav ul li {
     float: left; /* 부모인 ul의 왼쪽에 붙겠다 */
     width: 140px;
@@ -58,8 +54,8 @@ body {color: #333;}
     display: none;
     position: absolute; /* 부모 li에 relative 고정 */
     top: 65px; left: 0;
+    z-index: 100; /* 제이쿼리로 넘어간 서브메뉴 앞으로 올리기 */
 }
-#header .nav ul li .submenu li {}
 #header .nav ul li .submenu li a {
     background-color: #a2d17b;
     padding: 10px;
@@ -67,4 +63,195 @@ body {color: #333;}
 }
 #header .nav ul li .submenu li a:hover {
     background-color: #95c271;
+}
+
+
+/* 💛 #banner */
+#banner {
+    overflow: hidden;  /* 2) 제이쿼리 실행을 위해서 작성 */
+}
+#banner .slidelist {
+    width: 3000px;
+    position: relative; /* 1) 제이쿼리 실행을 위해서 작성 */
+}
+#banner .slidelist .slideImg {
+    position: relative;
+    float: left; /* ❗ float주면 부모가 깨짐, 부모인 slidelist(html)에 약처리 */
+    width: 1000px;
+}
+#banner .slidelist .slideImg h2 {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+#banner .slidelist .slideImg img {
+    width: 100%;
+    display: block; /* img태그 아래쪽 빈틈처리 (원인:img태그가 인라인요소이므로 빈틈생김) */
+    /* ❗ 해결방법 - 1. display:block;  2)vertical-align:top; */
+}
+
+
+/* 💛 #content1 */
+#content1 {
+    margin-top: 20px;
+}
+
+#content1 .left {
+    float: left;
+    width: 49%;
+
+    /* ✔ 백그라운드 */
+    /* background-color: #f2f2f2;
+    background-image: url(../img/bg1.jpg);  ✔(../)는 상위폴더 의미
+    background-repeat: no-repeat; 
+    백그라운드 이미지 넣으면 자동으로 반복되는데 반복안되도록 작성
+    background-size: 100px;
+    background-position: right 20px center; */
+    /* ❗ ↓한줄로 줄이기 - background: 색상 이미지 반복 포지션/size; */
+    background: #f2f2f2 url(../img/bg1.jpg) no-repeat right 20px center/100px;
+                                                   /* 오른쪽 20px 띄운다 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+#content1 .left .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .left .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .left .btn {
+    background: url(../img/icon1.jpg) no-repeat left center;
+    background-size: 20px;
+    padding-left: 25px;
+
+}
+
+#content1 .right {
+    float: right;
+    width: 49%;
+    background: #f2f2f2 url(../img/bg2.jpg) no-repeat right 20px center;
+    background-size: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#content1 .right .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .right .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .right .btn {
+    background: url(../img/icon2.jpg) no-repeat left center;
+    background-size: 20px;
+    padding-left: 25px;
+}
+
+
+/* 💛#content2 */
+#content2 {
+    margin-top: 30px;
+}
+#content2 .tab_btn ul li {
+    float: left;
+    margin-right: 15px;
+}
+#content2 .tab_btn ul li a {
+    color: #999;
+    font-size: 24px;
+    /* 인라인요소는 padding, margin의 상하는 적용안됨 */
+    display: block;
+    padding-bottom: 10px;
+}
+#content2 .tab_btn ul li.active a {
+    color: #000;
+}
+
+#content2 .tab_cont {}
+#content2 .tab_cont>div { overflow: hidden; }
+/* ❗ float로 부모의 깨진영역 부모영역에 overflow:hidden으로 약처리 가능하지만,
+   메뉴(nav)처럼 마우스 올렸을 때 나오는 그런 것들에는 사용불가
+   1. clear:both;
+   2. overflow:hidden;
+   3. 강제로 높이값 설정*/
+#content2 .tab_cont>div figure {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+#content2 .tab_cont>div figure:last-child {
+    margin-right: 0;
+}
+#content2 .tab_cont>div figure img {
+    width: 100%;
+}
+#content2 .tab_cont>div figure figcaption {}
+
+
+/* 💛 #footer */
+#footer {
+    overflow: hidden;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #202020;
+}
+#footer h2{
+    float: left;
+}
+#footer h2 img{
+    width: 150px;
+}
+#footer .foot {
+    float: right;
+}
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+#footer .foot ul li {
+    display: inline;
+    margin-left: 10px;
+}
+#footer .foot ul li:first-child {
+    margin-left: 0;
+}
+#footer .foot ul li a{
+    color: #fff;
+}
+#footer address {
+    color: #ccc;
+    font-style: normal; /* 주소태그는 기존 기울림체이므로 font-style로 해제 */
+}
+
+
+/* 💛.layer-bg (layer 팝업) */
+.layer-bg {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; 
+    top: 0; bottom: 0; 
+    /* width: 100%; height: 100%; -> 창을 가득 채운다 (=top: 0; bottom: 0;)과 똑같다 */
+    width: 100%;
+    background-color: #0000009d;
+}
+.layer-bg .layer {
+    width: 500px; height: 500px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+}
+.layer-bg .layer h2 {}
+.layer-bg .layer .close {
+    position: absolute;
+    right: 20px; bottom: 20px;
 }
