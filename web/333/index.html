@@ -1,0 +1,77 @@
+<!DOCTYPE html> <!-- 지금부터 html 5버전의 문서가 만들어진다 -->
+<html lang="ko">
+<!-- 이 문서의 언어설정 -->
+
+<head>
+    <meta charset="UTF-8"> <!-- 언어조합방법 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 호환을 어떻게 할 것인가의 내용 / ie의 가장 최신버전으로 보게 한다.
+         만약 chrome이 깔려있다면 chrome 브라우저가 웹페이지를 해석해서 보여주라는 의미
+        -chrome의 엔진을 사용하라
+        -ie로 열었다 하더라도 껍데기는 ie인데, 알맹이는 chrome이라는 의미 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ★중요) 이 사이트의 넓이를 다양한 디바이스(사용자 기기)의 크기에 맞추되 초기비율을 1,
+                 100%로 하겠다 -->
+    <title>Document</title>
+    <link href="css/sytle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="header_logo" class="clearfix">
+                <div class="logo">
+                    <a href="#">
+                        <img src="img/LOGO.png" alt="로고">
+                    </a>
+                </div> <!-- .logo end -->
+                <div class="nav">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">동호회소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">회칙</a></li>
+                                <li><a href="#">이용안내</a></li>
+                            </ul> <!-- .submenu end -->
+                        </li>
+                        <li>
+                            <a href="#">갤러리</a>
+                            <ul class="submenu">
+                                <li><a href="#">풍경자연</a></li>
+                                <li><a href="#">인물</a></li>
+                                <li><a href="#">사물</a></li>
+                            </ul> <!-- .submenu end -->
+                        </li>
+                        <li>
+                            <a href="#">교육안내</a>
+                            <ul class="submenu">
+                                <li><a href="#">기초사진</a></li>
+                                <li><a href="#">디지털사진</a></li>
+                                <li><a href="#">전물사진</a></li>
+                            </ul> <!-- .submenu end -->
+                        </li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </div> <!-- .nav end -->
+            </div> <!-- #header_logo end -->
+        </header>
+        <div id="imgslide">
+            <div class="imgs">
+                <img src="img/images(1).jpg" alt="이미지1">
+                <img src="img/images(2).jpg" alt="이미지2">
+                <img src="img/images(3).jpg" alt="이미지3">
+                <img src="img/images(4).jpg" alt="이미지4">
+                <img src="img/images(5).jpg" alt="이미지5">
+            </div> <!-- #imgs end -->
+        </div><!-- .imgslide end -->
+    </div> <!-- #wrap end -->
+
+
+    <!-- 💛제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

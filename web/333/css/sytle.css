@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* #wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* header */
+.header {}
+#header_logo {padding: 20px;}
+#header_logo .logo {float: left; width: 300px;}
+#header_logo .logo a {}
+#header_logo .logo a img {width: 100%;}
+
+#header_logo .nav {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+#header_logo .nav ul {}
+#header_logo .nav ul li{
+    float: left;
+    width: 120px;
+    text-align: center;
+    position: relative;
+}
+#header_logo .nav ul li a{
+    padding: 10px 0;
+    display: block;
+    transition: 0.3s;
+}
+#header_logo .nav ul li a:hover {
+    background-color: #36f;
+    color: #fff;
+}
+
+#header_logo .nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 42px; left: 0;
+    background-color: #ffffffa4;
+}
+#header_logo .nav ul li .submenu li {}
+#header_logo .nav ul li .submenu li a {
+    padding: 5px 0;
+    color: #000;
+}
+#header_logo .nav ul li .submenu li a:hover {
+    background-color: #999;
+    color: #fff;
+}
+
+/* slide */
+#imgslide {position: relative;}
+#imgslide .imgs {
+    /* ✔자식이 float 일 때, 부모가 float이면 그 부모는 깨지지 않는다
+       ✔자식이 float 일 때, 부모가 position:absolute; 거나 fixed면 그 부모는 깨지지 않는다 */
+    position: absolute;
+    top: 0; left: 0;
+    width: 5000px;
+}
+#imgslide .imgs img {
+    float: left;
+}
