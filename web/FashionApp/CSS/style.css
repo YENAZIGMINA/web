@@ -1,7 +1,8 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url(reset.css); 
 /* ✔reset연결 2번방법 : 리셋파일 연결하면 html에 css만 연결해도 reset까지 같이 연결됨 */
-/* font-family: 'Poppins', sans-serif; */
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -10,6 +11,19 @@ body {
 }
 li {list-style: none;}
 a {text-decoration: none;}
+
+.container {
+    padding: 0 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+form input::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+form input[value] {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 /* text align */
 .text-left {text-align: left;}
@@ -20,10 +34,11 @@ a {text-decoration: none;}
     font-size: 32px;
     line-height: 48px;
 }
-.btn {
+.btn.btn.btn { /* 1) .btn반복해서 강조하면 순위올라감 */
+    width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #7E57C2;
+    background-color: #7E57C2 /*!important*/; /* 2)!important작성하면 중요해짐(순위가 올라감) */
     color: #fff;
     font-size: 16px;
     display: block;
@@ -31,7 +46,7 @@ a {text-decoration: none;}
 }
 
 
-/* welcome */
+/* 💛.welcome */
 .welcome {
     height: 100vh;
     background: url(../images/welcome_bg.png) no-repeat center;
@@ -53,4 +68,111 @@ a {text-decoration: none;}
     width: 323px;
     margin-left: auto;
     margin-right: auto;
+}
+.sign_links a:first-child {
+    margin-bottom: 20px;
+}
+
+
+/* 💛.sign_in */
+.sign_in {
+    height: 100vh;
+    background: url(../images/sign_in_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 90px;
+    box-sizing: border-box;
+    position: relative;
+}
+.sign_in .container h2 {
+    color: #fff;
+    z-index: 50; /* 포지션이 없으면 안잡힘 */
+    position: relative;
+    margin-bottom: 116px;
+}
+.sign_in::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: -1;
+}
+[class^="sign"] form {
+    position: relative;
+}
+[class^="sign"] form label {
+    /* [class^=" "]는 ""안에 있는 클래스명으로 시작하는 것 */
+    display: none;
+}
+[class^="sign"] form input {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    background-color: rgba(238,238,238,0.4);
+    outline: none; /* 커서가 생길때 나타나는 border밖의 선 없애기 */
+    padding-left: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+[class^="sign"] form input::placeholder {
+    color: #fff; /* ✔ placeholder는 가상선택자로 불러서 색상변경 */
+}
+[class^="sign"] form p:not(:last-child) {
+    /* ❗ :not(:last-child) ==> 마지막 선택자가 아닌 것에 모두 적용하라 */
+    margin-bottom: 10px;
+}
+
+.signin_links {
+    margin-top: 25px;
+    position: relative;
+}
+.signin_links a {
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+.signin_links a:last-child {
+    margin-top: 25px;
+}
+
+
+/* 💛.sign_up */
+.sign_up {
+	height: 100vh;
+	background: url(../images/sign_up_bg.jpg) no-repeat center;
+	background-size: cover;
+	position: relative;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+.sign_up::before {
+	content: '';
+    display: block;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,0.2);
+    z-index: -1;
+}
+.sign_up .container {position: relative;}
+.sign_up h2 {
+    color: #fff;
+    margin-bottom: 60px;
+}
+[class^="sign"] form .btn {
+    margin-top: 77px;
+}
+.sign_up form .signin_links {
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+
+/* 💛.shop */
+header {
+    background-color: #7E57C2;
+    height: 50px;
 }
