@@ -53,6 +53,7 @@ a {
     position: absolute;
     top: 42px; left: 0;
     background-color: #ffffffa4;
+    z-index: 30;
 }
 #header_logo .nav ul li .submenu li {}
 #header_logo .nav ul li .submenu li a {
@@ -65,14 +66,169 @@ a {
 }
 
 /* slide */
-#imgslide {position: relative;}
+#imgslide {
+    position: relative; /* 자식들이 죽은영혼이 되어 h값 잃었으므로, 부모에게 억지로 h값 줌 */
+    height: 400px; overflow: hidden;
+}
 #imgslide .imgs {
-    /* ✔자식이 float 일 때, 부모가 float이면 그 부모는 깨지지 않는다
-       ✔자식이 float 일 때, 부모가 position:absolute; 거나 fixed면 그 부모는 깨지지 않는다 */
+    /* ✔ 자식이 float 일 때, 부모가 float이면 그 부모는 깨지지 않는다
+       ✔ 자식이 float 일 때, 부모가 position:absolute; 거나 fixed면 그 부모는 깨지지 않는다
+       ✔ 자식이 float 일 때, 부모가 overflow:hiddn;처리하면 그 부모는 깨지지 않는다 */
     position: absolute;
     top: 0; left: 0;
     width: 5000px;
 }
 #imgslide .imgs img {
     float: left;
+}
+#imgslide #imgsbar {
+    /* ❗ 점(이미지) 안나타나는 이유는 형 absolute(죽은자식), 부모 relative 되어있어서 점(동생)은 밑에 깔려있었음*/
+    /* ❗ 똑같이 absolute한 상황에서는 형보다 동생이 힘이세다! */
+    position: absolute;
+    top: 10px; left: 50%;
+    transform: translateX(-50%);
+}
+#imgslide #imgsbar li {
+    float: left;
+}
+#imgslide .welcome {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(255,255,255,0.3);
+    /* padding: 20px 30px; */
+    padding-inline: 30px; /* padding-inline 좌우패딩 */
+    padding-block: 20px; /* padding-block 상하패딩 */
+    border-radius: 20px;
+}
+
+/* #content */
+#content {
+    overflow: hidden;
+    padding-top: 40px; /* margin-top으로 줘도 상관없음 */
+    padding: 20px;
+}
+#content .notice {
+    float: left;
+    width: 480px;
+}
+#content .notice h2 {
+    color: #666;
+    text-align: center;
+    padding-bottom: 10px;
+}
+#content .notice table {
+    font-size: 1em; /* 기본 1em = 16px */
+    /* 부모의 기본사이즈를 따로 15px로 설정했다면 1em=15px
+       0.8em; 은 15px*0.8 = 12px */
+    font-size: 0.8em; /* 16px*0.8 = 12.8px */
+    border-collapse: collapse;
+}
+#content .notice table tr:nth-child(even) {
+    /* even, 2n은 짝수 */
+    background-color: #ccc;
+}
+#content .notice table tr td {
+    padding: 5px;
+    padding-top: 10px;
+}
+
+#content .partner {
+    float: right;
+    width: 480px;
+}
+#content .partner h2 {
+    text-align: center;
+    color: #666;
+    padding-bottom: 20px;
+}
+#content .partner .partner_info {}
+#content .partner .partner_info img {
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal .content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    width: 600px;
+    text-align: center; /* .close 글자 중앙정렬 */
+    padding: 40px;
+}
+.modal .content img {
+    display: block; /* 블럭하기전 img태그는 인라인 요소-> text-align:center로 중앙정렬하면 됨 */
+    margin: 0 auto; /* 블럭요소 중앙정렬 */
+}
+.modal .content .close {
+    margin-top: 10px;
+    display: inline-block; /* ❗ 마진값 적용시키기 위해 인라인블럭요소로 변경 */
+    background-color: #999;
+    color: #fff;
+    padding: 10px 20px;
+}
+#content .icon {
+    float: left; /* ❗ 형인 notice, partner가 float이 있으니, 동생도 float를 줘야 안깨짐 */
+    margin-top: 30px;
+}
+#content .icon .icons {}
+#content .icon .icons .btn {
+    float: left;
+    width: 33.3333%;
+    padding-inline: 10px;
+    box-sizing: border-box;
+    text-align: center;  /* 자식 button을 중앙정렬하기 위해 */
+}
+#content .icon .icons .btn img {
+    width: 100%;
+}
+#content .icon .icons .btn button {
+    /* ❗ button,img태그 인라인요소지만 별도의 공간을 인식함 */
+    /* ❗ 인라인요소는 중앙정렬불가하여, 부모에게 중앙정렬 해야함 */
+    background-color: #999;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+#content .icon .icons .btn button:hover {
+    background-color: #36f;
+}
+
+/* .footer */
+footer {
+    height: 100px;
+    background-color: #36f;
+    color: #fff;
+}
+footer div {
+    overflow: hidden;
+    padding: 10px 20px;
+}
+footer div ul {
+    float: left;
+    width: 50%;
+}
+footer div ul li {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+footer div ul li a {}
+
+footer div address {
+    float: left;
+    width: 50%;
+    font-style: normal; /* 주소글자 기울림체 해제 */
+    font-size: 12px;
+    line-height: 1.5;
 }
