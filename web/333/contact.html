@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+</head>
+<body>
+    <form action="#">
+        <table>
+            <tr>
+                <td>
+                    <label for="name">이름</label>
+                    <!-- ✔ label의 이름을 누르면 input입력창에 커서 들어가도록 설정
+                         ❗ td안에 라벨로 이름을 감싸면 됨 -->
+                </td>
+                <td>
+                    <input type="text" id="name" name="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="em">이메일</label>
+                </td>
+                <td>
+                    <input type="email" id="em" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>보내는 말씀</td>
+                <td>
+                    <textarea name="message" cols="30" rows="10">메시지를 입력하세요</textarea> <!-- 메시지를 입력하세요 엔터치지말고! -->
+                </td>
+            </tr>
+            <tr>
+                <td>관심있는 사진</td>
+                <td>
+                    <input type="text" name="photo" list="photo"> <!-- 말풍선 -->
+                    <datalist id="photo">
+                        <option value="풍경"></option>
+                        <option value="인물"></option>
+                        <option value="사물"></option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
