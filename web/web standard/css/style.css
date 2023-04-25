@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@import url(reset.css); /* ❗ reset 파일 style.css에 연결 */
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+
+/* 레이아웃 */
+#wrap {}
+#header {background: url(../img/bg-swan.jpg) center top; height: 325px;}
+#contents {}
+
+
+/* 컨테이너 */
+.container {
+    width: 990px;
+    margin: 0 auto;
+}
+
+
+
+/* 💛헤더 */
+.header .header-menu {
+/*  width: 300px;    1) 오른쪽정렬 방법 (margin사용)
+    margin-left: auto;  사용하지 않는 공간을 활용 -> auto */
+    text-align: right; /* 2) 오른쪽정렬 방법 */
+}
+.header .header-menu a {
+    color: #fff;
+    padding: 10px 0 10px 13px; /* 높이값 패딩적용안되는데, a는 인라인요소이기 때문 */
+    display: inline-block; /* 인라인요소이지만 블럭요소를 가진 inline-block으로 적용 */
+}
+.header .header-menu a:hover {
+    color: #999;
+}
+.header .header-title {
+    text-align: center; /* 내 밑 인라인요소를 가운데 정렬하라(부모에게 주기) */
+}
+.header .header-title h1{
+    background-color: rgb(37, 138, 206);
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase; /* 글자 대문자로 변경 */
+    margin-top: 40px;
+    display: inline-block; /* 인라인속성이 있기때문에 부모의 text-align,p값 먹힘 */
+    padding: 5px 20px 6px;
+}
+.header .header-title a {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 20px 6px;
+    background-color: rgb(25, 119, 182);
+    margin-top: -5px; /* 위쪽이랑 겹치게하기위해 -값 작성(패딩은 -불가) */
+}
+.header .header-icon {
+    text-align: center;
+    margin-top: 30px;
+}
+.header .header-icon a {
+    display: inline-block; /* 인라인요소 넓이값 지정을 위해서 inline-block */
+    width: 60px; height: 60px;
+    background: url(../img/icon.png); /* 아이콘들 이미지 한장으로 디자이너가 작업해놓음 */
+    margin: 0 3px;
+}
+/* 🔸중요) 이미지 스프라이트 기법  */
+.header .header-icon a.icon1 {
+    background-position: 0 0; /* 🔸중요) background-position:사진움직이는 태그 */
+}
+.header .header-icon a.icon2 {
+    background-position: 0 -60px;
+}
+.header .header-icon a.icon3 {
+    background-position: 0 -120px;
+}
+.header .header-icon a.icon4 {
+    background-position: 0 -180px;
+}
+.header .header-icon a.icon1:hover {
+    background-position: -60px 0; /* 🔸중요) hover시 이미지변경 */
+}
+.header .header-icon a.icon2:hover {
+    background-position: -60px -60px;
+}
+.header .header-icon a.icon3:hover {
+    background-position: -60px -120px;
+}
+.header .header-icon a.icon4:hover {
+    background-position: -60px -180px;
+}
+
+
+/* 💛#contents 레이아웃 */
+.cont_nav {
+    background-color: #edf9fd;
+}
+/* .nav */
+.nav {padding: 30px 0;}
+.nav>div {
+    float: left;
+    width: 40%;
+}
+.nav>div.last {
+    width: 20%;
+}
+.nav>div h3 {
+    font-size:  18px;
+    color: #25a2d0;
+    margin-bottom: 4px;
+}
+.nav>div ol {overflow: hidden;} /* 모든 ol한테 clearfix주는거보다 오버플로우로 한번에 처리 */
+.nav>div ol li {
+    float: left;
+    width: 50%; /* 2단으로 만들때 50% */
+    position: relative;
+}
+.nav>div ol li:after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px; /* 1)hover했을 때 밑줄 나타내기 */
+    background-color: #25a2d0;
+    transition: 0.2s;
+}
+.nav>div ol li:hover:after {
+    width: 75%; /* 2)hover했을 때 나타나는 밑줄 넓이 */
+}
+.nav>div.last ol li {
+    width: 100%; /* 마지막div는 1단 */
+}
+/* .nav>div ol li a:hover {
+    text-decoration: underline; 밑줄
+} */

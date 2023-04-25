@@ -175,4 +175,100 @@ form input[value] {
 header {
     background-color: #7E57C2;
     height: 50px;
+    position: relative;
+}
+header>h2 {
+    font-size: 17px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+}
+header>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header>img.menu_icon_left {
+    left: 25px;
+}
+header>img.menu_icon_right {
+    right: 25px;
+}
+
+.top-product {
+    width: 350px; height: 250px;
+    position: relative;
+    padding: 25px 25px 0 0;
+}
+.top-product img {
+    width: 100%;
+}
+.top-product .info {
+ /* box-shadow: x값 y값 blur spread color; (spread는 잘안씀) */
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    position: absolute;
+    right: 0; bottom: -37px;
+    left: 50px;
+    background-color: #fff;
+    padding: 10px 20px 14px 20px; 
+}
+.top-product .info h2 {
+    /* text-shadow: 0 0 rgba(0,0,0,0.25); -> 글자에도 그림자 가능 */
+    font-size: 18px;
+    color: #757575;
+    line-height: 27px;
+    margin-bottom: 5px;
+}
+.top-product .info .desc {
+    margin-top: 5px;
+}
+.top-product .info .desc .price {
+    font-size: 13px;
+    color: #7E57C2;
+    float: left;
+    line-height: 20px;
+}
+.top-product .info .desc .rate {
+    font-size: 13px;
+    color: #7E57C2;
+    line-height: 21px;
+    position: absolute;
+    right: 20px; bottom: 12px;
+}
+.top-product .info .desc .rate i {
+
+}
+
+/* swiper 슬라이드 */
+.shop_product {
+    padding-left: 25px;
+    margin-top: 80px;
+    overflow: hidden; /* .div.swiper-slide 넘치는 것 감추기 */
+}
+.shop_product .product_list {}
+.product_list .swiper-slide {width: 125px;}
+.product_list .swiper-slide img {width: 100%;}
+.product_list .swiper-slide h3 {
+    font-size: 16px;
+    line-height: 25px;
+    color: #757575;
+/*  말 줄임말 set
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+.product_list .swiper-slide h4 {
+    font-size: 13px;
+    line-height: 21px;
+    color: #7E57C2;
+}
+
+
+/* 💛category */
+.category_slide {position: relative;}
+.category_slide .swiper-slide {}
+.category_slide .swiper-slide img {width: 100%;}
+.category_slide .swiper-pagination {
+    position: absolute;
+    bottom: 15px; left: 0;
 }
