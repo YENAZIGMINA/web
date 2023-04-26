@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +13,28 @@
     <meta name="generator" content="vs code">
 
     <title>Web Standard SITE</title>
-    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/008/505/668/original/pink-ballet-shoes-illustration-png.png" type="image/x-icon"> <!-- 🔸파비콘 - href에 주소넣기 -->
+
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/previews/008/505/668/original/pink-ballet-shoes-illustration-png.png"
+        type="image/x-icon"> <!-- 🔸파비콘 - href에 주소넣기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <!-- 🔹3) slick cdn사이트 slick.min.css 복붙 -->
+
 
     <!-- 🔸style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- 🔸웹폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div id="wrap">
-        
+
         <div id="header">
-            <div class="container"> <!-- ➰'컨테이너'기준으로 영역안 작업영역 -->
+            <div class="container">
+                <!-- ➰'컨테이너'기준으로 영역안 작업영역 -->
                 <div class="header">
                     <div class="header-menu">
                         <a href="https://www.w3schools.com/">Designer</a>
@@ -32,7 +42,7 @@
                         <a href="https://www.w3schools.com/">Youtube</a>
                     </div> <!-- .header-menu end -->
                     <div class="header-title">
-                        <h1>Professional Publisher &amp; Designer</h1><br/>
+                        <h1>Professional Publisher &amp; Designer</h1><br />
                         <!-- entity code 사이트에서 &기호 entity name가져오기  -->
                         <a href="#">GreenArt.co.kr</a>
                     </div> <!-- .header-title end -->
@@ -53,10 +63,11 @@
                 </div> <!-- .header end -->
             </div> <!-- .container end -->
         </div> <!-- #header end -->
-                        
+
         <div id="contents">
             <div class="cont_nav">
-                <div class="container"> <!-- css에 컨테이너 중앙정렬 적용 -->
+                <div class="container">
+                    <!-- css에 컨테이너 중앙정렬 적용 -->
                     <h2 class="ir">전체메뉴</h2>
                     <div class="nav clearfix">
                         <div>
@@ -112,9 +123,64 @@
                     </div> <!-- .nav end -->
                 </div> <!-- container end -->
             </div> <!-- .cont_nav end -->
+
+            <div id="cont_tit">
+                <div class="container">
+                    <div class="tit">
+                        <h2>&ldquo;나는 퍼플리셔다!&rdquo;</h2>
+                        <a href="#" class="btn">
+                            <span class="ir">전체메뉴</span> <!-- reset에서 숨김처리함 -->
+                        </a>
+                    </div> <!-- .tit end -->
+                </div> <!-- .container end -->
+            </div> <!-- #cont_tit end -->
+
+            <div id="cont_ban">
+                <div class="container">
+                    <div class="ban"> <!-- 🔹1)slick setup HTML markup 복붙 -->
+                        <div>
+                            <a href="#"><img src="img/banner_link1.jpg" alt="웹표진 지침서 보기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link2.jpg" alt="css 버튼 만들기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link3.jpg" alt="html 로그인폼 만들기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link1.jpg" alt="웹표진 지침서 보기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link2.jpg" alt="css 버튼 만들기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link3.jpg" alt="html 로그인폼 만들기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link1.jpg" alt="웹표진 지침서 보기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link2.jpg" alt="css 버튼 만들기"></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="img/banner_link3.jpg" alt="html 로그인폼 만들기"></a>
+                        </div>
+                    </div> <!-- .ban end -->
+                </div> <!-- .container end -->
+            </div> <!-- #cont_ban -->
         </div> <!-- #contents end -->
 
     </div> <!-- #wrap end -->
-    
+
+
+    <!-- 💛제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> <!-- jquery cdn 복붙 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- 🔹2) slick cdn 사이트 slick.min.js 복붙 -->
+
+    <script src="js/custom.js"></script> <!-- 외부js연결 (custom.js) -->
+
+
 </body>
+
 </html>

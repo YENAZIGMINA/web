@@ -272,3 +272,31 @@ header>img.menu_icon_right {
     position: absolute;
     bottom: 15px; left: 0;
 }
+
+.category_list {
+    overflow: hidden; /* 부모태그에 clearfix 줘도 됨 */
+}
+.category_list li {
+    float: left;
+    width: 46%;
+    margin-right: 8%; /* 사진끼리 띄우기, 여백주기 */
+    margin-top: 25px;
+}
+.category_list li:nth-child(even) {
+    margin-right: 0;
+}
+.category_list li img {
+    width: 100%;
+}
+.category_list li h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #757575;
+}
+.category_list li h4 {
+    font-size: 13px;
+    line-height: 21px;
+    color: #7E57C2;
+    margin-top: 1px;
+}
