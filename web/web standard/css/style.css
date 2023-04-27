@@ -15,6 +15,8 @@ font-family: 'Nanum Gothic', sans-serif; */
 .cont_nav {background-color: #edf9fd;}
 #cont_tit {background-color: #eaf7fd;}
 #cont_ban {background-color: #dceff7;}
+#cont_cont {background-color: #f6fdff;}
+
 /* 컨테이너 */
 .container {
     width: 990px;
@@ -66,7 +68,7 @@ font-family: 'Nanum Gothic', sans-serif; */
     background: url(../img/icon.png); /* 아이콘들 이미지 한장으로 디자이너가 작업해놓음 */
     margin: 0 3px;
 }
-/* 🔸중요) 이미지 스프라이트 기법  */
+/* 🔸중요) 이미지 스프라이트(아이콘넣기) 기법  */
 .header .header-icon a.icon1 {
     background-position: 0 0; /* 🔸중요) background-position:사진움직이는 태그 */
 }
@@ -155,7 +157,7 @@ font-family: 'Nanum Gothic', sans-serif; */
     background-position: 0 -660px;
 }
 
-/* banner (.cont_ban) */
+/* 💛banner (.cont_ban) */
 .ban {padding: 24px 0 40px;}
 .ban img {border: 4px solid #dcdcdc;}
 .ban img:hover {border: 4px solid #98dcdc;}
@@ -206,4 +208,194 @@ font-family: 'Nanum Gothic', sans-serif; */
     transform: scaleX(1.3);
     transform-origin: left top; /* ✔변형시작점 : 왼쪽에서 오른쪽으로 커지기 */
     border-radius: 5px;
+}
+
+
+/* 💛 cont_cont */
+.cont {
+    padding-top: 30px;
+}
+.cont .column {
+    border-right: 1px solid #c8c8c8 ;
+    width: 289px; height: 363px;
+    float: left; /* float는 본인에게 적용 */
+    padding-right: 30px;
+    margin: 0 30px 30px 0;
+    position: relative; /* 2)ico_img의 position기준점->작성하면 넓이값작성한 만큼 화면에 나타남 */
+}
+.cont .col1 {}
+.cont .col2 {}
+.cont .col3 {
+    border-right: 0;
+    margin-right: 0; padding-right: 0;
+}
+.cont .col4 {}
+.cont .col5 {}
+.cont .col6 {
+    border-right: 0;
+    margin-right: 0; padding-right: 0;
+}
+
+.cont .column h3 {}
+.cont .column h3 .ico_img {
+    background: url(../img/icon.png);
+    width: 60px; height: 60px;
+    left: 0; top: 0; /* 1)reset.css에서 ir태그 absolute상태지만 위치값은 없었으므로 여기서 설정 */
+    /* transition: 1s; 
+    -> hover하면 옆에이미지가 위치이동하면서 보이게 되는데, 시간을 안주고 한번에 변하도록 설정*/
+}
+.cont .col1 h3 .ico_img {
+    background-position: 0 -240px;
+}
+.cont .col2 h3 .ico_img {
+    background-position: 0 -300px;
+}
+.cont .col3 h3 .ico_img {
+    background-position: 0 -360px;
+}
+.cont .col4 h3 .ico_img {
+    background-position: 0 -420px;
+}
+.cont .col5 h3 .ico_img {
+    background-position: 0 -480px;
+}
+.cont .col6 h3 .ico_img {
+    background-position: 0 -540px;
+}
+
+.cont .col1 h3 .ico_img:hover {
+    background-position: -60px -240px;
+}
+.cont .col2 h3 .ico_img:hover {
+    background-position: -60px -300px;
+}
+.cont .col3 h3 .ico_img:hover {
+    background-position: -60px -360px;
+}
+.cont .col4 h3 .ico_img:hover {
+    background-position: -60px -420px;
+}
+.cont .col5 h3 .ico_img:hover {
+    background-position: -60px -480px;
+}
+.cont .col6 h3 .ico_img:hover {
+    background-position: -60px -540px;
+}
+
+.cont .column h3 .ico_tit {
+    font-size: 16px;
+    color: #2c94c4;
+    padding-left: 70px;
+}
+.cont .column .ico_desc {
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 15px;
+    padding-left: 70px;
+    margin-bottom: 15px;
+}
+
+/* 게시판 notice */
+.notice {
+    /* margin-top: 15px; */
+    position: relative;} /* a.more의 position기준 */
+.notice h4 {
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice ul {}
+.notice ul li {
+    /* ❗말줄임말 3종set */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* ➰ white-space : nowrap, normal, pre;
+           nowrap - 화면의 넓이와 상관없이 한 줄로 쭉 이어짐
+           normal - 화면의 넓이에 따라 글자가 아래로 떨어짐
+           pre - 화면의 넓이와 상관없이 내가 작성한 엔터 그대로 나옴 */
+
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+     /* 자식은 부모의 패딩에 관여못하므로 부모인 li에 패딩값 설정 
+         (+) 글자도 a태그,li태그의 자식인셈)   */
+}
+.notice ul li a {
+    font-size: 12px;
+}
+.notice a.more {
+    width: 17px; height: 17px;
+    /* ❗ a태그 넓이 인식되는 이유는 ir태그에서 absolute해서 원래 성질 상실함 */
+    background: url(../img/icon.png) -150px -90px;
+    right: 0; top: 0;
+}
+
+/* 게시판2 notice2 */
+.notice2 {
+    margin-top: 15px;
+    position: relative;
+}
+.notice2 h4 {
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice2 ul {}
+.notice2 ul li {
+}
+.notice2 ul li a {
+    float: left; /* ❗ a, span 인라인태그 넓이 인식되는 이유는 float가 적용되면 본래 성질 상실 */
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice2 ul li span {
+    float: right;
+    width: 30%;
+}
+.notice2 a.more {
+    right: 0; top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    width: 17px; height: 17px;
+}
+
+/* 게시판3 notice3 */
+.notice3 {
+    margin-top: 15px;
+    position: relative;
+}
+.notice3 h4 {
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice3 ul {}
+.notice3 ul li { 
+/* ❔글자를 밀어야하는데, 왜 li를 미는지? ❗자식은 부모의 패딩에 관여를 못하니까! 부모인 li에 적용
+   ❔li를 밀면, img는 왜 안밀리는지? ❗🔹img에 absolute잡아줘서 고정되었고,
+                                     부모의 영역은 패딩값까지 포함되어 img만 안밀리게 된다! */
+    position: relative;
+    padding: 8px 0 16px 60px; /*🔹*/
+}
+.notice3 ul li a {}
+.notice3 ul li a img {
+    position: absolute; /*❗🔹*/
+    left: 0; top: 0;
+    width: 50px;
+}
+.notice3 ul li a strong {}
+.notice3 ul li a span {
+    display: block;
+    /* 말줄임은 블럭요소만 적용됨 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice3 a.more {
+    top: 0; right: 0;
+    width: 17px; height: 17px;
+    background: url(../img/icon.png) -150px -90px;
 }

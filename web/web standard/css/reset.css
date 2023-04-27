@@ -12,6 +12,8 @@ a:hover {color: #390;}
 /* 폰트 초기화 */
 body,input,textarea,select,button,table{
     font-family: 'Nanum Gothic', '맑은 고딕',dotum,'돋움',sans-serif;
+    color: #222; font-size: 13px; line-height: 1.5;
+    /* line-height 기본값 : 폰트사이즈가 16px일 때, line-height 기본값은 폰트사이즈의 1~1.3배 */
 }
 
 /* 폰트 스타일 초기화 */
