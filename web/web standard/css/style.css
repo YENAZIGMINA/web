@@ -343,6 +343,10 @@ font-family: 'Nanum Gothic', sans-serif; */
 }
 .notice2 ul {}
 .notice2 ul li {
+    overflow: hidden; /* 자식들한테 float 줬으니 깨지지 말라고 작성 */
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    /* top: 0; right: 0; -> 여기는 왜 앱솔 위치값 안잡는지?*/
+    padding-left: 8px;
 }
 .notice2 ul li a {
     float: left; /* ❗ a, span 인라인태그 넓이 인식되는 이유는 float가 적용되면 본래 성질 상실 */
@@ -399,3 +403,151 @@ font-family: 'Nanum Gothic', sans-serif; */
     width: 17px; height: 17px;
     background: url(../img/icon.png) -150px -90px;
 }
+
+
+/* col4. notice_hover */
+.notice_hover {}
+.notice_hover h4 {
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice_hover ul {}
+.notice_hover ul li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+}
+.notice_hover ul li:last-child {
+    margin-right: 0;
+}
+.notice_hover ul li a  {}
+.notice_hover ul li a span {
+    /* ✔ 인라인요소는 자식의 넓이를 따라감 */
+    position: relative;
+    display: block; /* ❗ em태그의  포지션기준점 되려니까 공간인식못하는 인라인 span태그이므로, 
+                         공간을 주기위해 display:블럭;처리 */
+}
+.notice_hover ul li a span img {
+    width: 100%;
+    display: block; /* ❗ 이미지태그는 인라인요소라서 밑에 공간생기게 되는데, 없애기위해 블럭처리 */
+}
+.notice_hover ul li a span em {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    line-height: 98px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center; /* ❗ 인라인요소에는 text-align: center;적용안되지만,
+                             position을 줘서 본인성질 잃어버리니 가능해짐 */
+    visibility: hidden;
+    /* ✔ 영역을 안보이게 하는 방법
+       display:none; 실제영역이 없어짐 (애니o)
+       opacity:0; 영역은 존재하지만 안보이기만 한 것 (애니o)
+       visibility: hidden; 영역은 존재하지만 안보이기만 한 것 (애니x)*/
+}
+.notice_hover ul li a span:hover em {
+    visibility: visible; /* em이 나타남 */
+}
+.notice_hover ul li a strong {
+    font-size: 12px;
+    padding-top: 3px;
+    display: block; /* pt값 주기위해 */
+}
+
+/* <!-- .마우스 hover효과2(.col4) .notice_hover2 --> */
+.notice_hover2 {
+    margin-top: 15px;
+}
+.notice_hover2 ul {}
+.notice_hover2 ul li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.notice_hover2 ul li:last-child {
+    margin-right: 0;
+}
+.notice_hover2 ul li a {}
+.notice_hover2 ul li a span {
+    position: relative;
+    display: block;
+    overflow: hidden; /* hover넣기 위해 */
+}
+.notice_hover2 ul li a span img {
+    width: 100%;
+    display: block;
+}
+.notice_hover2 ul li a span em {
+    position: absolute;
+    bottom: -25px; left: 0; /* hover시 밑에서 올라오도록 bottom값 작성 */
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    padding: 2px 0;
+    transition: 0.3s;
+}
+.notice_hover2 ul li a span:hover em {
+    bottom: 0px;
+} 
+.notice_hover2 ul li a strong {
+    font-size: 14px;
+    padding-top: 3px;
+    display: block;
+}
+
+
+/* 탭메뉴 .col5.tab_menu */
+.tab_menu {
+    height: 108px;
+    border: 1px solid #ccc;
+    padding: 8px; /* ✔전체에 p값 줘서 선이 끝까지 안채워져 보이는 것임! */
+    position: relative; /* 🔹2차메뉴 기준점 */
+}
+.tab_menu h4 {}
+.tab_menu ul {
+    border-bottom: 1px solid #ccc;
+}
+.tab_menu ul li {
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: -1px; margin-bottom: -1px;
+    /* 선을 줘서 li선끼리붙어서 중간에 겹치는부분은 2px처럼 됨 -> ✔없애기위해 mr -1적용  */
+}
+.tab_menu ul li a {
+    display: block;
+    padding: 5px 10px;
+}
+/* 탭메뉴-🔹2차메뉴 */
+.tab_menu ul li ul {
+    position: absolute;
+    top: 50px; left: 10px;
+    width: 260px; /* 말줄임말 넣으려고 w값 작성 */
+    border: 0;
+}
+.tab_menu ul li ul li {
+    float: none;
+    border: 0;
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 10px;
+}
+.tab_menu ul li ul li a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 0 3px 0;
+}
+
+.tab_menu ul li.active {
+    background-color: #2c94c4;
+}
+.tab_menu ul li.active a {
+    color: #fff;
+}
+.tab_menu ul li.active ul li a {
+    color: #222;
+} 
