@@ -551,3 +551,86 @@ font-family: 'Nanum Gothic', sans-serif; */
 .tab_menu ul li.active ul li a {
     color: #222;
 } 
+
+/* notice4 (col.5) */
+.notice4 {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    position: relative;
+}
+.notice4 h4 {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 10px;
+    color: #0090bd;
+}
+.notice4 h4 em {
+    color: #cf3292;
+}
+.notice4 ul {
+    padding: 10px;
+}
+.notice4 ul li {
+    overflow: hidden; /* 자식깨지는 것 방지 */
+}
+.notice4 ul li a {
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice4 ul li span {
+    float: right;
+    width: 30%;
+}
+.notice4 .more {
+    position: absolute;
+    top: 10px; right: 10px;
+}
+
+
+/* 갤러리 .col6 */
+.gallery {
+    border: 1px solid #ccc;
+}
+.gallery h4 {
+    font-size: 14px;
+    color: #0090bd;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 8px 11px;
+    font-weight: bold;
+}
+.gallery img {
+    width: 100%;
+}
+
+.gallery .gallery_btn {}
+.gallery .gallery_btn button {
+    width: 23px; height: 23px;
+    background: url(../img/icon.png) no-repeat;
+}
+.gallery .gallery_btn button.gb_icon1 {
+    background-position: -150px -120px;
+}
+.gallery .gallery_btn button.gb_icon2 {
+    background-position: -150px -143px;
+}
+.gallery .gallery_btn button.gb_icon3 {
+    background-position: -150px -166px;
+}
+.gallery .gallery_btn button.gb_icon4 {
+    background-position: -150px -189px;
+}
+
+.gallery .gallery_btn button.gb_icon1:hover {
+    background-position: -173px -120px;
+}
+.gallery .gallery_btn button.gb_icon2:hover {
+    background-position: -173px -143px;
+}
+.gallery .gallery_btn button.gb_icon3:hover {
+    background-position: -173px -166px;
+}
+.gallery .gallery_btn button.gb_icon4:hover {
+    background-position: -173px -189px;
+}
