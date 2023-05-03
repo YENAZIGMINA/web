@@ -300,3 +300,222 @@ header>img.menu_icon_right {
     color: #7E57C2;
     margin-top: 1px;
 }
+
+/* 💛Product Detail */
+
+header .left {
+    left: 25px;
+}
+header h2 {
+    font-size: 17px;
+}
+header .right {
+    right: 25px
+}
+
+.contnent {}
+.main_top {padding: 0 25px;}
+.main_top h2{
+    font-size: 18px;
+    line-height: 29px;
+    color: #757575;
+    margin-top: 25px;
+}
+.main_top .star {
+    font-size: 13px;
+    line-height: 21px;
+    color: #7E57C2;
+    margin-right: 5px;
+}
+
+.main_slide {
+    margin-top: 15px;
+    padding: 0 25px;
+}
+.main_slide .main_img {
+    width: 100%;
+}
+.main_img .slick-slide {
+    padding-right: 25px;
+}
+.main_slide .main_img div img {
+    width: 100%; height: 100%;
+}
+
+.main_slide .slick-dots {
+    position: absolute;
+    bottom: -25px; right: 78px;
+}
+.main_slide .slick-dots li {
+    float: left;
+    width: 10px; height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #7E57C2;
+    margin-right: 5px;
+    border-radius: 50%;
+    /* list-style: none; */
+}
+.main_slide .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    border-color: none;
+    border: 0;
+    background: none;
+}
+.main_slide .slick-dots li.slick-active {
+    background-color: #7E57C2;
+}
+
+.main_slide span {
+    font-size: 26px;
+    color: #757575;
+    display: block;
+    margin-top: 20px;
+}
+.main_slide p {
+    font-size: 13px;
+    line-height: 21px;
+    color: #757575;
+    margin-top: 10px;
+}
+
+.option {
+    overflow: hidden;
+    margin-top: 15px;
+}
+.color {
+    float: left;
+    width: 100px; height: 25px;
+    border: 1px solid #999999;
+    margin-left: 25px;
+    position: relative;
+}
+.color p {
+    line-height: 25px;
+    font-size: 13px;
+    color: #757575;
+    display: block;
+    padding-left: 10px;
+}
+.color i {
+    position: absolute;
+    top: 0px; right: 10px;
+    color: #757575;
+    font-size: 7px;
+    line-height: 25px;
+}
+.size {
+    float: right;
+    width: 100px; height: 25px;
+    border: 1px solid #999999;
+    margin-right: 125px;
+    position: relative;
+}
+.size p {
+    line-height: 25px;
+    font-size: 13px;
+    color: #757575;
+    display: block;
+    padding-left: 10px;
+}
+.option .size i {
+    position: absolute;
+    top: 0px; right: 10px;
+    color: #757575;
+    font-size: 7px;
+    line-height: 25px;
+}
+
+.bottom {
+    margin-top: 25px;
+    padding: 0 25px;
+}
+.bottom form input {
+    width: 325px; height: 50px;
+    background-color: #7E57C2;
+    color: #fff;
+    font-size: 16px;
+    outline: 0;
+    display: block;
+    outline-style: none; /* 안먹힘 */
+}
+
+
+/* 💛.Shopping Cart */
+.wrap {
+    padding: 0 25px;
+    margin-top: 35px;
+}
+.cart {
+    width: 325px; height: 55px;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 15px;
+}
+.cart_p {
+    float: left;
+    width: 90%;
+}
+.icon {
+    float: right;
+}
+.cart_p img {
+    float: left;
+    width: 40px; height: 40px;
+    margin-right: 10px;
+}
+.cart_p div h3 {
+    font-size: 15px;
+    line-height: 20px;
+    color: #757575;
+}
+.cart_p div p {
+    font-size: 10px;
+    line-height: 16px;
+    color: #757575;
+}
+.cart .icon {
+    font-size: 10px;
+    line-height: 40px;
+    color: #757575;
+}
+
+
+.price {
+    margin-top: 30px;
+}
+.price .text {
+    overflow: hidden;
+    position: relative;
+}
+.price .text span {
+    /* float: left; */
+    font-size: 15px;
+    line-height: 25px;
+    color: #757575;
+    position: absolute;
+    top: 0; right: 88px;
+}
+.price .text .total {
+    font-size: 18px;
+    font-weight: 500;
+}
+.price .text p {
+    float: right;
+    font-size: 15px;
+    line-height: 25px;
+    color: #757575;
+}
+.price .text .total_p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #7E57C2;;
+    font-weight: 500;
+}
+
+.bottom input {
+    margin-top: 35px;
+
+    outline: none;
+    border: 0;
+    box-sizing: border-box;
+}
