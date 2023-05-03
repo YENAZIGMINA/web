@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="images/menu_Icon_left.svg" alt="왼쪽아이콘" class="left">
+        <h2>Product Details</h2>
+        <img src="images/menu_Icon_right.svg" alt="오른쪽아이콘" class="right">
+    </header>
+
+    <div class="content">
+        <div class="main_top">
+            <h2>Modern T-Shirt for women</h2>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div> <!-- .star end -->
+        </div> <!-- main_top end -->
+
+        <div class="main_slide">
+            <div class="main_img">
+                <div><img src="images/product_detail_01.jpg" alt="이미지1"></div>
+                <div><img src="images/product_detail_02.jpg" alt="이미지2"></div>
+                <div><img src="images/product_detail_01.jpg" alt="이미지1"></div>
+                <div><img src="images/product_detail_02.jpg" alt="이미지2"></div>
+            </div> <!-- .main_img end -->
+            <span>$21.99</span>
+            <p>Look stunning with this modern t-shirt.
+                it&rsquo;s comfortable and attractive</p>
+        </div><!-- .main_slide end -->
+
+        <div class="option">
+            <div class="color">
+                <p>Color</p>
+                <i class="fas fa-chevron-down"></i>
+            </div> <!-- .color end -->
+            <div class="size">
+                <p>Sizes</p>
+                <i class="fas fa-chevron-down"></i>
+            </div> <!-- .size -->
+        </div> <!-- .option end -->
+    </div> <!-- .content end -->
+
+    <div class="bottom sign">
+        <form action="#">
+            <input type="submit" value="Add To Cart" id="btn">
+        </form>
+    </div> <!-- .bottom end -->
+
+
+
+
+    <!-- 💛제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('.main_img').slick({
+                slidesToShow: 1.1,
+                arrows: false,
+                dots: true
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
