@@ -9,6 +9,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 #wrap {}
 #header {background: url(../img/bg-swan.jpg) center top; height: 325px;}
 #contents {}
+#footer {border-top: 1px solid #eee;}
 
 
 /* contents 레이아웃 */
@@ -95,7 +96,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 }
 
 
-/* .nav */
+/* 💛.nav */
 .nav {
     padding: 30px 0;
     display: none;
@@ -153,9 +154,11 @@ font-family: 'Nanum Gothic', sans-serif; */
     width: 60px; height: 60px;
     background:url(../img/icon.png) 0 -600px; /* url 뒤에값 background-position */
 }
-.tit .btn.on { /* js에서 toggle로 클래스명 .on만든걸로 적용 (index에는 클래스명on 없음) */
+.tit .btn.on { 
+    /* ⭕ js에서 toggle로 클래스명 .on만든걸로 적용 (index에는 클래스명on 없음) */
     background-position: 0 -660px;
 }
+
 
 /* 💛banner (.cont_ban) */
 .ban {padding: 24px 0 40px;}
@@ -294,10 +297,11 @@ font-family: 'Nanum Gothic', sans-serif; */
     margin-bottom: 15px;
 }
 
-/* 게시판 notice */
+/* 게시판 notice .col1*/
 .notice {
     /* margin-top: 15px; */
-    position: relative;} /* a.more의 position기준 */
+    position: relative; /* a.more의 position기준 */
+} 
 .notice h4 {
     font-size: 14px;
     color: #0093bd;
@@ -330,7 +334,7 @@ font-family: 'Nanum Gothic', sans-serif; */
     right: 0; top: 0;
 }
 
-/* 게시판2 notice2 */
+/* 게시판2 notice2 .col1 */
 .notice2 {
     margin-top: 15px;
     position: relative;
@@ -426,7 +430,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 .notice_hover ul li a span {
     /* ✔ 인라인요소는 자식의 넓이를 따라감 */
     position: relative;
-    display: block; /* ❗ em태그의  포지션기준점 되려니까 공간인식못하는 인라인 span태그이므로, 
+    display: block; /* ❗ em태그의 포지션기준점 되려니까 공간인식못하는 인라인 span태그이므로, 
                          공간을 주기위해 display:블럭;처리 */
 }
 .notice_hover ul li a span img {
@@ -592,6 +596,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 /* 갤러리 .col6 */
 .gallery {
     border: 1px solid #ccc;
+    position: relative;
 }
 .gallery h4 {
     font-size: 14px;
@@ -604,7 +609,10 @@ font-family: 'Nanum Gothic', sans-serif; */
     width: 100%;
 }
 
-.gallery .gallery_btn {}
+.gallery .gallery_btn {
+    position: absolute;
+    top: 7px; right: 7px;
+}
 .gallery .gallery_btn button {
     width: 23px; height: 23px;
     background: url(../img/icon.png) no-repeat;
@@ -633,4 +641,130 @@ font-family: 'Nanum Gothic', sans-serif; */
 }
 .gallery .gallery_btn button.gb_icon4:hover {
     background-position: -173px -189px;
+}
+
+
+/* 로그인 */
+.login_wrap {
+    background-color: #f2f4f5;
+    padding: 15px;
+}
+.login_header {
+    font-size: 12px;
+    padding: 3px 0;
+}
+.login_wrap .lh_check {
+    float: left;
+    padding-right: 15px;
+}
+.login_wrap .lh_check .info_check {
+    vertical-align: -3px; /* ❗ 인라인끼리 라인을 맞출때 */
+}
+.login_wrap .lh_ip {
+    float: left;
+}
+.login_wrap .lh_ip em {}
+
+.login_content {
+    position: relative;
+}
+.login_content .lc_text .input_text {
+    width: 182px; height: 16px;
+    border: 1px solid #bebebe;
+    background-color: #fff;
+    outline: none;
+    margin-bottom: 3px;
+    padding: 2px 5px;
+}
+.login_content .lc_btn {
+    position: absolute;
+    top: 0; right: 0;
+    width: 62px; height: 47px;
+    background-color: #fff;
+    border: 1px solid #bebebe;
+}
+.login_footer {margin-top: 5px;}
+.login_footer ul {}
+.login_footer ul li {
+    display: inline; /* 공간을 확실히 정하지 않아도 될 때 수평 나란히 정렬은 inline */
+}
+.login_footer ul li a {}
+.login_footer ul li a strong {}
+
+/* 팝업 */
+.popup {margin-top: 15px;}
+.popup h4 {
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+.popup ul {}
+.popup ul li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+}
+.popup ul li:last-child {
+    margin-right: 0;
+}
+.popup ul li a {}
+.popup ul li a img {
+    width: 100%;
+}
+.popup ul li.layer {}
+.popup ul li.window {}
+.popup ul li.lightbox {}
+
+
+
+/* 💛footer */
+.footer {
+    text-align: center;
+    padding: 25px 0;
+}
+.footer ul {
+    margin-bottom: 20px;
+}
+.footer ul li {
+    display: inline;
+    padding: 0 7px 0 10px;
+    position: relative;
+}
+.footer ul li::before{
+    content: '';
+    width: 1px; height: 12px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0; left: 0;
+}
+.footer ul li:first-child::before {
+    width: 0; height: 0;
+    /* display: none; -> 이것도 가능*/
+}
+.footer ul li a {}
+.footer address {}
+
+
+
+
+/* layer popup */
+#layer {
+    display: none;
+    position: fixed;
+    left: 50px; top: 50px;
+    width: 700px;
+    border: 10px solid #dceff7;
+}
+#layer img {
+    width: 100%;
+    display: block; /* 이미지의 공간 없애기 */
+}
+#layer .close {
+    position: absolute;
+    top: 10px; right: 10px;
+    background-color: #0093bd;
+    padding: 2px 6px;
+    color: #fff;
+    border-radius: 10px;
 }
